@@ -1,5 +1,5 @@
 # NegPlus
-NegPlus (Neg+) is a CLI based tool using which anybody can convert any Negetive image into a Black &amp; White picture or a color picture.
+NegPlus (**Neg+**) is a CLI based tool using which anybody can convert any Negetive image into a Black &amp; White picture or a color picture.
 
 ## Functionality
 NegPlus allows you to process image files using various color scales:
