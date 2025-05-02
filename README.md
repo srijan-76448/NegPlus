@@ -30,4 +30,4 @@ python3 main.py <scale> <image_path> [output_path]
 
 ## Dependencies
 - Python 3
-- (Pillow)[https://pypi.org/project/pillow/]
+- !(Pillow)[https://pypi.org/project/pillow/]
