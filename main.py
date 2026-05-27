@@ -28,19 +28,19 @@ def converter(image_path, scale, format: str = 'PNG', output_path: str = None):
             px = (r, g, b)
 
             if scale == "grey":
-                px = (int(sum([r, g, b])/3), int(sum([r, g, b])/3), int(sum([r, g, b])/3))
+                px = (int(sum([r, g, b])//3), int(sum([r, g, b])//3), int(sum([r, g, b])//3))
                 
             if scale == "negetive":
                 px = (255-r, 255-g, 255-b)
 
             if scale == "red":
-                px = (r, 0, 0)
+                px = (sum([r, g, b])//3, 0, 0)
 
             if scale == "green":
-                px = (0, g, 0)
+                px = (0, sum([r, g, b])//3, 0)
 
             if scale == "blue":
-                px = (0, 0, b)
+                px = (0, 0, sum([r, g, b])//3)
 
             if scale == "inverted":
                 px = (b, g, r)
@@ -74,12 +74,13 @@ Options             Description
 
 def main():
     args = sys.argv[1:]
-    flag = [i for i in args if i[0] == "-"][0]
-    args.remove(flag)
-    args = [i for i in args if i[0] != "-"]
 
     if len(args) == 0:
         help()
+
+    flag = [i for i in args if i[0] == "-"][0]
+    args.remove(flag)
+    args = [i for i in args if i[0] != "-"]
 
     if flag not in scales:
         print(f"\033[91;1m[-] Error:\033[0m Invalid scale '\033[1m{flag}\033[0m'.\n")
